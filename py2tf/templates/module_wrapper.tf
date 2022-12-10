@@ -1,0 +1,4 @@
+module "testing" {
+  source = "../"
+{{ parameters }}
+}
