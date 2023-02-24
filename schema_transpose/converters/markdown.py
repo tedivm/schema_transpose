@@ -7,8 +7,9 @@ except:
     # This works on Ubuntu but not MacOS
     from markdownTable import markdownTable  # type: ignore
 
-from schema_transpose.converters.jinja import JinjaConverter
 from pydantic import BaseModel
+
+from schema_transpose.converters.jinja import JinjaConverter
 
 
 class MarkdownTableBuilder(markdownTable):

@@ -7,8 +7,9 @@ from typing import Any, Dict, List, cast
 
 from glom import glom  # type: ignore
 from jinja2 import Environment, FileSystemLoader, Template
-from schema_transpose import validators
 from pydantic import BaseModel
+
+from schema_transpose import validators
 
 env = Environment(loader=FileSystemLoader(Path(__file__).parent.parent / "templates"))
 
