@@ -7,9 +7,8 @@ except:
     # This works on Ubuntu but not MacOS
     from markdownTable import markdownTable  # type: ignore
 
-from pydantic import BaseModel
-
 from py2tf.converters.jinja import JinjaConverter
+from pydantic import BaseModel
 
 
 class MarkdownTableBuilder(markdownTable):
@@ -33,7 +32,6 @@ class MarkdownTableBuilder(markdownTable):
 
 
 class MarkdownConverter(JinjaConverter):
-
     numbers: List[str] = []  # ["int", "float", "integer"]
     objects: List[str] = ["dict", "object"]
     pass_through_fields: List[str] = ["string", "int", "float", "integer"]
@@ -42,7 +40,6 @@ class MarkdownConverter(JinjaConverter):
         self.format = format
 
     def convert(self, model: BaseModel) -> str:
-
         schema = model.schema()
         output = ""
         fields = []

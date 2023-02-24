@@ -7,9 +7,8 @@ from typing import Any, Dict, List, cast
 
 from glom import glom  # type: ignore
 from jinja2 import Environment, FileSystemLoader, Template
-from pydantic import BaseModel
-
 from py2tf import validators
+from pydantic import BaseModel
 
 env = Environment(loader=FileSystemLoader(Path(__file__).parent.parent / "templates"))
 
@@ -31,7 +30,6 @@ SETTINGS = {
 
 
 class JinjaConverter:
-
     numbers: List[str] = ["int", "float", "integer"]
     objects: List[str] = ["dict", "object"]
     pass_through_fields: List[str] = ["string"]
@@ -112,7 +110,6 @@ class JinjaConverter:
         }
 
     def get_type(self, field_name, field_data):
-
         type_validators = []
 
         if "enum" in field_data:
