@@ -1,4 +1,4 @@
-from py2tf.converters.markdown import MarkdownConverter
+from schema_transpose.converters.markdown import MarkdownConverter
 
 
 def test_init():

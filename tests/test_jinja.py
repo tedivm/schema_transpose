@@ -1,4 +1,4 @@
-from py2tf.converters.jinja import JinjaConverter
+from schema_transpose.converters.jinja import JinjaConverter
 
 
 def test_init():
