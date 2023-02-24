@@ -1,16 +1,16 @@
-# Pydantic to Terraform
+# Schema Transpose
 
-This library converts Pydantic Models into Terraform Variables.
+This library and CLI converts JSON Schema Documents into other languages. It can work with JSON Schema or Pydantic files as a source.
 
 
 ## Usage
 
-This needs to be installed in the same virtual environment as the Models that it is converting. Once installed a CLI tool, `py2tf`, will be available in the environment.
+This needs to be installed in the same virtual environment as the Models that it is converting. Once installed a CLI tool, `schema_transpose`, will be available in the environment.
 
 For example, to generate a variables file for the RDS ParameterValidation class-
 
 ```shell
-robert@Roberts-MacBook-Pro terraform-aws-core % py2tf modules.rds.validation.parameters:ParameterValidation
+robert@Roberts-MacBook-Pro terraform-aws-core % schema_transpose modules.rds.validation.parameters:ParameterValidation
 ```
 
 The command will output the following to stdout:
@@ -77,8 +77,3 @@ variable "is_public" {
   default = false
 }
 ```
-
-
-## Next Steps
-
-At the moment this does not generate validation rules (min/max length, regex, etc).
